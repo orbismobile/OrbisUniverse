@@ -1,5 +1,5 @@
 Servidor Swift + MySQL DB
-=========================
+-------------------------
 
 Requerimientos
 ----------------------
@@ -7,7 +7,7 @@ Requerimientos
 - Instalar **[Vapor](https://vapor.codes)**
 - Instalar **[MySQL](https://dev.mysql.com/downloads/mysql/)**
 
-----------
+
 
 Como empezar?
 ----------------------
