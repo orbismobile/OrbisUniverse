@@ -1,15 +1,20 @@
-# Basic Template
+OrbisUniverse Server
+=================
 
-A basic vapor template for starting a new Vapor web application. If you're using vapor toolbox, you can use: `vapor new --template=basic`
+Servidor Swift + MySQL DB
+-------------------------------------
 
-## 📖 Documentation
+Requerimientos
+----------------------
 
-Visit the Vapor web framework's [documentation](http://docs.vapor.codes) for instructions on how to use this package.
+- Instalar **[Vapor](https://vapor.codes)**
+- Instalar **[MySQL](https://dev.mysql.com/downloads/mysql/)**
 
-## 💧 Community
+----------
 
-Join the welcoming community of fellow Vapor developers in [slack](http://vapor.team).
+Como empezar?
+----------------------
 
-## 🔧 Compatibility
-
-This package has been tested on macOS and Ubuntu.
+```bash 
+$ git clone git@github.com:orbismobile/OrbisUniverse.git
+```
