@@ -1,8 +1,5 @@
-OrbisUniverse Server
-=================
-
 Servidor Swift + MySQL DB
--------------------------------------
+=========================
 
 Requerimientos
 ----------------------
