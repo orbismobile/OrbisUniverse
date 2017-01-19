@@ -28,4 +28,57 @@ $ Open Xcode project?
 $ y/n> n
 ```
 
-- Finalmente,  agregamos **-DNOJSON** en "Other Swift Flags" en el framework de **MySQL** en *Build Settings* del proyecto.
+Una vez en el XCode, en el project navigator, ir a **Config > secrets > mysql.json**. Ahí puedes configurar las propiedades necesarias para configurar la conexión a la base de datos MYSQL.
+Ej.
+
+```bash
+{
+    "host": "localhost",
+    "user": "root",
+    "password": "2413",
+    "database": "OrbisUniverse",
+    "port": "8080",
+    "encoding": "utf8"
+}
+```
+Luego en el project navigator, ir a **Sources > App > main.swift**. Este es el archivo principal para empezar la aplicación. Para poder conectarse a la base de datos, se necesita unas líneas de código.
+
+Importamos la librería VaporMySQL:
+```bash
+import VaporMySQL
+```
+
+Agregamos al **"Provider"** de conexión de BD. Otros lo llaman **"Driver"**
+```bash
+let drop = Droplet()
+.
+.
+.
+try drop.addProvider(VaporMySQL.Provider.self)
+.
+.
+.
+```
+
+Hacemos una pequeña consulta:
+```bash
+.
+.
+.
+drop.get ("persons") { _ in
+    if let db = drop.database?.driver as? MySQLDriver {
+        let result = try db.raw("SELECT * FROM persons;")
+        return JSON(result)
+    }
+    else {
+        return "Falló la conexión a la bd"
+    }  
+}
+.
+.
+.
+drop.resource("posts", PostController())
+drop.run()
+```
+
+- Finalmente, corremos la aplicación y esperamos en el log: **Starting...**. Vamos al navegador e ingresamos ej. //locahost:8080/persons.
